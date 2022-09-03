@@ -1,10 +1,23 @@
 pipeline{
-  agent any
-  stages{
-    stage('Create jobs'){
-      steps{
-        sh 'ansible-playbook create-jobs.yml'
+
+  agent {
+    node {
+      label 'workstation'
+    }
+  }
+
+  environment{
+    SSH=credentials('SSH')
+  }
+
+  parameters {
+     string(name: 'COMPONENT', defaultValue: '',description: 'which component to run in pipeline')
+  }
+
+  stages {
+    stage('Ansible playbook') {
+      steps {
+        sh 'ansible-playbook -i'
       }
     }
   }
-}
