@@ -1,23 +1,13 @@
-pipeline{
-
-  agent {
-    node {
-      label 'workstation'
-    }
+pipeline {
+  agent any
+  options {
+    ansiColor('xterm')
   }
-
-  environment{
-    SSH=credentials('SSH')
-  }
-
-  parameters {
-     string(name: 'COMPONENT', defaultValue: '',description: 'which component to run in pipeline')
-  }
-
   stages {
-    stage('Ansible playbook') {
+    stage('create jobs') {
       steps {
-        sh 'ansible-playbook -i'
+        sh 'ansible-playbook create-jobs.yml'
       }
     }
   }
+}
