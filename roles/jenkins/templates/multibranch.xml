@@ -1,0 +1,61 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@716.vc692a_e52371b_">
+    <actions/>
+    <description></description>
+    <properties>
+        <org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty plugin="multibranch-action-triggers@1.8.6">
+            <createActionJobsToTrigger></createActionJobsToTrigger>
+            <deleteActionJobsToTrigger></deleteActionJobsToTrigger>
+            <actionJobsToTriggerOnRunDelete></actionJobsToTriggerOnRunDelete>
+            <quitePeriod>0</quitePeriod>
+            <branchIncludeFilter>*</branchIncludeFilter>
+            <branchExcludeFilter></branchExcludeFilter>
+            <additionalParameters/>
+        </org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty>
+    </properties>
+    <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1046.v0ca_37783ecc5">
+        <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+    </folderViews>
+    <healthMetrics/>
+    <icon class="jenkins.branch.MetadataActionFolderIcon" plugin="branch-api@2.1046.v0ca_37783ecc5">
+        <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+    </icon>
+    <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.740.ve4f4ffa_dea_54">
+        <pruneDeadBranches>true</pruneDeadBranches>
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>-1</numToKeep>
+        <abortBuilds>false</abortBuilds>
+    </orphanedItemStrategy>
+    <triggers/>
+    <disabled>false</disabled>
+    <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.1046.v0ca_37783ecc5">
+        <data>
+            <jenkins.branch.BranchSource>
+                <source class="jenkins.plugins.git.GitSCMSource" plugin="git@4.11.4">
+                    <id>70695b4d-e672-43b9-8761-4f12216f338f</id>
+                    <remote>https://github.com/Satish439/Jenkins-learning.git</remote>
+                    <credentialsId></credentialsId>
+                    <traits>
+                        <jenkins.plugins.git.traits.BranchDiscoveryTrait/>
+                        <jenkins.plugins.git.traits.TagDiscoveryTrait/>
+                    </traits>
+                </source>
+                <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">
+                    <properties class="empty-list"/>
+                </strategy>
+                <buildStrategies>
+                    <jenkins.branch.buildstrategies.basic.BranchBuildStrategyImpl plugin="basic-branch-build-strategies@1.3.2"/>
+                    <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies@1.3.2">
+                        <atLeastMillis>-1</atLeastMillis>
+                        <atMostMillis>604800000</atMostMillis>
+                    </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
+                </buildStrategies>
+            </jenkins.branch.BranchSource>
+        </data>
+        <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+    </sources>
+    <factory class="org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory">
+        <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+        <scriptPath>Jenkinsfile</scriptPath>
+    </factory>
+</org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>
