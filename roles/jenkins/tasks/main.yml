@@ -7,3 +7,11 @@
     token: "11f73e73eb52befc32e4d0aed578a10633"
   loop: "{{folders}}
 
+- name: create Multi Branch pipeline jobs
+  community.general.jenkins_job:
+    config: "{{ lookup( 'template', 'pipeline.xml')'}}"
+    name: "{{item.folderName}}{{item.jobName}}"
+    url: Jenkins IP address Url
+    user: "admin"
+    Token: Generated from API from Jenkins
+  loops: "{{pipelinejobs}}"
