@@ -1,4 +1,4 @@
-- name: create jobs
+- name: Create Jobs
   hosts: localhost
   roles:
-    -jenkins
+    - jenkins

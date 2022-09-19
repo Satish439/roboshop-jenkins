@@ -2,17 +2,7 @@
 <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@716.vc692a_e52371b_">
     <actions/>
     <description></description>
-    <properties>
-        <org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty plugin="multibranch-action-triggers@1.8.6">
-            <createActionJobsToTrigger></createActionJobsToTrigger>
-            <deleteActionJobsToTrigger></deleteActionJobsToTrigger>
-            <actionJobsToTriggerOnRunDelete></actionJobsToTriggerOnRunDelete>
-            <quitePeriod>0</quitePeriod>
-            <branchIncludeFilter>*</branchIncludeFilter>
-            <branchExcludeFilter></branchExcludeFilter>
-            <additionalParameters/>
-        </org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty>
-    </properties>
+    <properties/>
     <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1046.v0ca_37783ecc5">
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
     </folderViews>
@@ -20,20 +10,25 @@
     <icon class="jenkins.branch.MetadataActionFolderIcon" plugin="branch-api@2.1046.v0ca_37783ecc5">
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
     </icon>
-    <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.740.ve4f4ffa_dea_54">
+    <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.729.v2b_9d1a_74d673">
         <pruneDeadBranches>true</pruneDeadBranches>
         <daysToKeep>-1</daysToKeep>
         <numToKeep>-1</numToKeep>
         <abortBuilds>false</abortBuilds>
     </orphanedItemStrategy>
-    <triggers/>
+    <triggers>
+        <com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger plugin="multibranch-scan-webhook-trigger@1.0.9">
+            <spec></spec>
+            <token>{{item.componentName}}</token>
+        </com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger>
+    </triggers>
     <disabled>false</disabled>
     <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.1046.v0ca_37783ecc5">
         <data>
             <jenkins.branch.BranchSource>
-                <source class="jenkins.plugins.git.GitSCMSource" plugin="git@4.11.4">
-                    <id>70695b4d-e672-43b9-8761-4f12216f338f</id>
-                    <remote>https://github.com/Satish439/Jenkins-learning.git</remote>
+                <source class="jenkins.plugins.git.GitSCMSource" plugin="git@4.11.3">
+                    <id>d6e166ef-bc82-4ea7-88b3-6f13b76afbb3</id>
+                    <remote>https://github.com/raghudevopsb65/{{item.repoName}}</remote>
                     <credentialsId></credentialsId>
                     <traits>
                         <jenkins.plugins.git.traits.BranchDiscoveryTrait/>

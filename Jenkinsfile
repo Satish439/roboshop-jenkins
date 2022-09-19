@@ -4,7 +4,7 @@ pipeline {
     ansiColor('xterm')
   }
   stages {
-    stage('create jobs') {
+    stage('Create Jobs') {
       steps {
         sh 'ansible-playbook create-jobs.yml'
       }
