@@ -14,4 +14,13 @@
     url: Jenkins IP address Url
     user: "admin"
     Token: Generated from API from Jenkins
-  loops: "{{pipelinejobs}}"
+  loops: "{{Multi branch}}"
+
+    - name: Create Single Branch Pipeline Jobs
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'pipeline.xml') }}"
+        name: "{{item.folderName}}{{item.jobName}}"
+        url: "http://3.235.160.124.40:8080"
+        user: "admin"
+        token: "116bc0e4bbae6fc05a6d0a1942ab96a56d"
+      loop: "{{pipelineJobs}}"

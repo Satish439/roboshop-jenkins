@@ -1,11 +1,15 @@
-folders:
-  - {name: "CI-Pipelines", description: "CI Pipeline Jobs for All RoboShop Components"}
+#folders:
+#  - {name: "CI-Pipelines", description: "CI Pipeline Jobs for All RoboShop Components"}
+#
+#multibranchJobs:
+#  - { jobName: "cart", folderName: "CI-Pipelines/",  repoName: "cart", componentName: "cart" }
+#  - { jobName: "catalogue", folderName: "CI-Pipelines/",  repoName: "catalogue", componentName: "catalogue" }
+#  - { jobName: "user", folderName: "CI-Pipelines/",  repoName: "user", componentName: "user" }
+#  - { jobName: "shipping", folderName: "CI-Pipelines/",  repoName: "shipping", componentName: "shipping" }
+#  - { jobName: "payment", folderName: "CI-Pipelines/",  repoName: "payment", componentName: "payment" }
+#  - { jobName: "frontend", folderName: "CI-Pipelines/",  repoName: "frontend", componentName: "frontend" }
+#  -
 
-multibranchJobs:
-  - { jobName: "cart", folderName: "CI-Pipelines/",  repoName: "cart", componentName: "cart" }
-  - { jobName: "catalogue", folderName: "CI-Pipelines/",  repoName: "catalogue", componentName: "catalogue" }
-  - { jobName: "user", folderName: "CI-Pipelines/",  repoName: "user", componentName: "user" }
-  - { jobName: "shipping", folderName: "CI-Pipelines/",  repoName: "shipping", componentName: "shipping" }
-  - { jobName: "payment", folderName: "CI-Pipelines/",  repoName: "payment", componentName: "payment" }
-  - { jobName: "frontend", folderName: "CI-Pipelines/",  repoName: "frontend", componentName: "frontend" }
 
+pipelineJobs:
+  - { jobName: "deploy-to-any-env", folderName: "",  repoName: "roboshop-jenkins", fileName: "Jenkinsfile-any-env-deploy"}
