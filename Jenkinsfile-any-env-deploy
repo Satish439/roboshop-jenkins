@@ -23,13 +23,15 @@ pipeline {
     }
 
     stage('Deploy') {
-      steps {
-        sh """
-          ansible-playbook -i dev.inv.roboshop -e HOST=${COMPONENT} -e ROLE=${COMPONENT} -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} roboshop.yml -e APP_VERSION=${APP_VERSION} -e ENV=${ENV}
-        """
-      }
-    }
+          steps {
+            sh """
+              ansible-playbook -i dev.inv.roboshop, -e HOST=${COMPONENT}-${ENV}.roboshop.internal -e ROLE=${COMPONENT} -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} roboshop.yml -e APP_VERSION=${APP_VERSION} -e ENV=${ENV}
+            """
+          }
+        }
 
-  }
+      }
+
+    }
 
 }
